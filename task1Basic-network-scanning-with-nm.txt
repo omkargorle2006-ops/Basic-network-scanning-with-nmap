@@ -1,0 +1,40 @@
+task1:Basic-network-scanning-with-nmap
+
+1.nmap 10.192.242.97
+
+output:
+
+PORT    STATE SERVICE
+80/tcp  open  http
+135/tcp open  msrpc
+139/tcp open  netbios-ssn
+445/tcp open  microsoft-ds
+
+2.nmap -sV 10.192.242.97
+
+output:
+
+PORT    STATE SERVICE       VERSION
+80/tcp  open  http          Microsoft IIS httpd 10.0
+135/tcp open  msrpc         Microsoft Windows RPC
+139/tcp open  netbios-ssn   Microsoft Windows netbios-ssn
+445/tcp open  microsoft-ds?
+
+
+3.nmap -p- 10.192.242.97
+
+output:
+
+PORT      STATE    SERVICE
+80/tcp    open     http
+135/tcp   open     msrpc
+137/tcp   filtered netbios-ns
+139/tcp   open     netbios-ssn
+445/tcp   open     microsoft-ds
+5040/tcp  open     unknown
+49664/tcp open     unknown
+49665/tcp open     unknown
+49666/tcp open     unknown
+49667/tcp open     unknown
+49668/tcp open     unknown
+49673/tcp open     unknown
